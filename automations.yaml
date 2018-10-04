@@ -1,0 +1,11 @@
+- id: '15385294283456'
+  alias: "Porch Animation Speed"
+  trigger:
+    platform: state
+    entity_id: input_select.porch_animation_speed
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "clay/porch/set"
+        payload: '{"transition":{{ trigger.to_state.state | int }}}'
+
