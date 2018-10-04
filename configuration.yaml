@@ -1,0 +1,49 @@
+mqtt:
+  broker: your service address
+  port: service port
+  client_id: client id
+  username: username
+  password: password
+ 
+
+light:
+  - platform: mqtt_json
+    name: "Porch Strip"
+    state_topic: "clay/porch"
+    command_topic: "clay/porch/set"
+    effect: true
+    effect_list:
+      - bpm
+      - candy cane  
+      - confetti  
+      - cyclon rainbow  
+      - dots  
+      - fire  
+      - glitter  
+      - juggle  
+      - lightning
+      - noise  
+      - police all  
+      - police one  
+      - rainbow  
+      - rainbow with glitter  
+      - ripple  
+      - sinelon  
+      - solid  
+      - twinkle  
+    brightness: true
+    flash: true
+    rgb: true
+    optimistic: false
+    qos: 0
+
+input_number:
+  porch_animation_speed:
+    name: Porch Animation Speed
+    initial: 150
+    min: 1
+    max: 150
+    step: 10
+    
+    
+ 
